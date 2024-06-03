@@ -5,51 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-Scissors-Game</title>
     <link rel="stylesheet" href="output.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .cpu-image img {
-        transform: rotate(-90deg) rotateY(180deg);
-      }
-    </style>
+    <link rel="stylesheet" href="game.css" />
   </head>
   <body
-    class="bg-[#F6F7FB] w-[100vw] h-[100vh] flex justify-center items-center"
+    class="bg-[#F6F7FB] w-[100vw] h-[100vh] flex justify-center items-center overflow-hidden"
   >
     <div
-      class="container drop-shadow-2xl w-[50%] h-[90%] bg-white rounded-2xl flex flex-col justify-center items-center gap-16"
+      class="container md:w-[50%] drop-shadow-2xl bg-white rounded-2xl flex flex-col justify-center items-center gap-16"
     >
       <div class="game flex gap-32">
         <span class="user-image">
           <img class="w-28 rotate-90" src="images/rock.png" alt="rock" />
+          <h1 class="text-[#7D2AE8] text-center font-semibold text-4xl">You</h1>
         </span>
         <span class="cpu-image">
           <img class="w-28" src="images/rock.png" alt="rock" />
+          <h1 class="text-[#7D2AE8] text-center font-semibold text-4xl">CPU</h1>
         </span>
       </div>
 
       <div class="state">
-        <h1 class="text-[#7D2AE8] font-semibold text-4xl">Let's Play!!</h1>
+        <h1 class="state text-[#7D2AE8] font-semibold text-4xl">
+          Let's Play!!
+        </h1>
       </div>
 
-      <div class="user-selection flex gap-28 text-[#7D2AE8]">
+      <div
+        class="user-selection w-[80%] flex justify-center gap-16 text-[#7D2AE8]"
+      >
         <span
-          class="rock-selected text-center cursor-pointer opacity-50 hover:opacity-[1]"
+          class="option-image rock-selected text-center cursor-pointer opacity-50 hover:opacity-[1]"
         >
           <img class="w-16" src="images/rock.png" alt="" />
           <h1 class="text-xl ml-1 mt-4">Rock</h1>
         </span>
         <span
-          class="paper-selected text-center cursor-pointer opacity-50 hover:opacity-[1]"
+          class="option-image paper-selected text-center cursor-pointer opacity-50 hover:opacity-[1]"
         >
           <img class="w-16" src="images/paper.png" alt="" />
           <h1 class="text-xl ml-1 mt-4">Paper</h1>
         </span>
         <span
-          class="scissors-selected text-center cursor-pointer opacity-50 hover:opacity-[1]"
+          class="option-image scissors-selected text-center cursor-pointer opacity-50 hover:opacity-[1]"
         >
           <img class="w-16" src="images/scissors.png" alt="" />
           <h1 class="text-xl ml-1 mt-4">Scissors</h1>

@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.cpu-image img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+
+.game.start .user-image {
+  
+  animation: user_shake 0.7s ease infinite;
+}
+@keyframes user_shake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+.game.start .cpu-image  {
+  animation: cpu_shake 0.7s ease infinite;
+}
+@keyframes cpu_shake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
