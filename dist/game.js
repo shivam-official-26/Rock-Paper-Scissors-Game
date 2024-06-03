@@ -8,7 +8,26 @@ const rockSelected = document.querySelector(".rock-selected");
 const paperSelected = document.querySelector(".paper-selected");
 const scissorsSelected = document.querySelector(".scissors-selected");
 const optionImage = document.querySelectorAll(".option-image");
+const userScore = document.querySelector(".userScore");
+const drawScore = document.querySelector(".drawScore");
+const cpuScore = document.querySelector(".cpuScore");
 
+//Sow Score function
+let you = 0;
+let draw = 0;
+let cpu = 0;
+function showScore(winner) {
+  if (winner === "You") {
+    you++;
+    userScore.innerHTML = you;
+  } else if (winner === "CPU") {
+    cpu++;
+    cpuScore.innerHTML = cpu;
+  } else {
+    draw++;
+    drawScore.innerHTML = draw;
+  }
+}
 
 optionImage.forEach((image, index) => {
   image.addEventListener("click", (e) => {
@@ -22,7 +41,6 @@ optionImage.forEach((image, index) => {
     });
 
     game.classList.add("start");
-    
 
     setTimeout(() => {
       game.classList.remove("start");
@@ -55,6 +73,8 @@ optionImage.forEach((image, index) => {
       let resultValue = resultConditions[userValue + cpuValue];
       state[1].innerText =
         userValue === cpuValue ? "Match Draw" : `${resultValue} Won!!`;
+
+      showScore(resultValue);
     }, 2500);
   });
 });
